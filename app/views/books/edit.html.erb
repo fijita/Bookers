@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag 'edit' %>
+<body>
+  <h1>Editing Book</h1>
+  <%= render 'error_messages' %>
+
+  <%= form_with model:@book, local:true do |f| %>
+    <div>Title</div>
+    <div class="field"><%= f.text_field :title %></div>
+    <div>Body</div>
+    <div class="field"><%= f.text_area :body %></div>
+    <div class="actions"><%= f.submit "Update Book" %></div>
+  <% end %>
+  <p>
+    <%= link_to "Show",book_path(@book) %>
+    |
+    <%= link_to "Back",books_path %>
+  </p>
+</body>
+
